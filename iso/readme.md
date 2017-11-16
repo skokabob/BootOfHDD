@@ -1,1 +1,1 @@
-# Místo pro obrazové operační systémy ve formátu
+# Místo pro obrazové operační systémy ve formátu \*.iso
