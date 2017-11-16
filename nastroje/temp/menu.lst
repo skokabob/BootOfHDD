@@ -1,0 +1,68 @@
+#     NORMAL     HIGHLIGHT    HELPTEXT       HEADING in pairs consisting of foreground/background
+color black/cyan blue/cyan red/light-blue red/cyan
+gfxmenu /BLACK.GFX
+
+write (md)0x220+1 !BAT\necho -n -P:0000 $[0133]                    --- Windows install ---                                    \0
+initscript (md)0x220+1
+
+title WINDOWS Setup By sushil1576 - Boot from any Windows ISO to install\nThis menu allows you to type in the name of any Windows ISO file and boot from it
+# find the ISO folder by looking for a marker file
+find --set-root /ISO/choose_an_iso
+clear
+echo
+# list all files in the /ISO folder so the user can see them
+ls ()/ISO/
+echo
+# Ask user which iso they want (name is converted to uppercase as $U is specified)
+set /p /u ask=Enter iso filename WITH NO .ISO EXTENSION (e.g. Win7Pro32 ) :  
+if "%ask%"=="" echo No iso file specified! && configfile /menu.lst
+clear
+# check if user entered a valid filename with no ISO extension!
+ls /ISO/%ask%.iso || echo Cannot find /ISO/%ask%.iso !!! && pause --wait=3 && configfile (bd)/menu.lst
+echo Loading /ISO/%ask%.iso - please wait ...
+#set root drive to USB stick
+map --mem (md)0x800+4 (99)
+find --set-root /ISO/%ask%.iso
+# run the grub4dos map command and specify the iso file we want to load
+set mm=map /ISO/%ask%.iso (0xff)
+%mm%
+map (hd0) (hd1)
+map (hd1) (hd0)
+map --hook
+# Specify the same iso file for when firadisk runs in winpe
+set mm=write (99) [FiraDisk]\nStartOptions=disk,vmem=find:/windows7x64.vhd,boot;cdrom,vmem=find:/ISO/%ask%.iso;\n\0
+%mm%
+chainloader (0xff)/BOOTMGR || chainloader (0xff)
+clear
+
+
+title Boot from 1st Hard Disk \nBoot from MBR of first hard disk and remove the USB drive
+map (hd0) (hd1)
+map (hd1) (hd0)
+map --hook
+chainloader (hd0)+1
+rootnoverify (hd0)
+
+title Boot into Your Windows XP Professional
+map (hd0) (hd1)
+map (hd1) (hd0)
+map --hook
+find --set-root /ntldr
+chainloader /ntldr
+
+title Boot into your Windows 7/Vista/Server 2008
+map (hd0) (hd1)
+map (hd1) (hd0)
+map --hook
+find --set-root /bootmgr
+chainloader /bootmgr
+
+
+title Commandline
+commandline
+
+title Reboot
+reboot
+
+title Shutdown
+halt
