@@ -5,20 +5,11 @@ gfxmenu /boot/menu/BLACK.GFX
 write (md)0x220+1 !BAT\necho -n -P:0000 $[0133]                    --- Windows install ---                                    \0
 initscript (md)0x220+1
 
-title Windows 7 SP1 - 32 bit
-configfile /boot/menu/win7_32.lst
+title Windows 7 SP1 - AIO
+configfile /boot/menu/win7.lst
 
-title Windows 7 SP1 - 64 bit
-configfile /boot/menu/win7_64.lst
-
-title Windows 8.1 - 32 bit
-configfile /boot/menu/win81_32.lst
-
-title Windows 8.1 - 64 bit
-configfile /boot/menu/win81_64.lst
-
-title Windows 8 SP1 (recovery)
-configfile /boot/menu/win8rescue.lst
+title Windows 10
+configfile /boot/menu/win10.lst
 
 title Boot from 1st Hard Disk \nBoot from MBR of first hard disk and remove the USB drive
 map (hd0) (hd1)
