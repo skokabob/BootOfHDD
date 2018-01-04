@@ -4,6 +4,8 @@
 
 - Který umožnuje vybrat operační systémy pro instalaci či oprav PC
 
+![Úvodní menu](/nastroje/images/screen01.png)
+
 ## Postup
 
 - Stahněte si \*.zip do počítače a rozbalíte do externího HDD či Flash disku.
