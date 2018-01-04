@@ -1,0 +1,6 @@
+debug off
+set MYISO=DLC_Boot_2015.iso
+map /iso/%MYISO% (0xff) || map --mem /iso/%MYISO% (0xff)
+map --hook
+root (0xff)
+chainloader (0xff)

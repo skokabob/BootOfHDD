@@ -1,9 +1,0 @@
-debug off
-set MYISO=HBCD152.iso
-map --mem (md)0x800+4 (99)
-map /iso/rescue/%MYISO% (0xff)
-map (hd0) (hd1)
-map (hd1) (hd0)
-map --hook
-write (99) [FiraDisk]\nStartOptions=cdrom,vmem=find:/iso/rescue/%MYISO%;\n\0
-chainloader (0xff)
