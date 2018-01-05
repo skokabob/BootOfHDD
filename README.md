@@ -18,4 +18,4 @@
 - Stahněte si \*.zip do počítače a rozbalíte do externího HDD či Flash disku.
 - Nakopírujte operační obrazy do složky **iso**!
   - Ale u OS Windows v obrazovém formátu \*.iso je potřeba nahrát pomocí nástroje ovladače **FiraDisk** pro vytvoření virtuální mechaniky
-- Vytvořte zavaděč pomocí konfiguračního adresáře `../boot/syslinux/bootinst.bat`, aby z disku umožnil spustit tzv. spustitelný zavaděč operačních systémů.
+- Vytvořte zavaděč pomocí konfiguračního adresáře `../boot/syslinux/bootinst.bat`, aby z disku umožnil spustit tzv. bootovatelný zavaděč operačních systémů.
