@@ -7,7 +7,10 @@
 ### Úvodní menu
 ![Úvodní menu](/nastroje/images/screen01.png)
 
-### Menu výběr operačního systému MS Windows
+### Menu výběr instalačního operačního systému MS Windows
+
+* [Návod pro zakazání digitálního podpisu ovladačů pro instalaci MS Windows 10](https://github.com/skokabob/BootOfHDD/tree/master/nastroje)
+
 ![Menu výběr operačního systému MS Windows](/nastroje/images/screen03.png)
 
 ### Menu DLC Boot 2017
