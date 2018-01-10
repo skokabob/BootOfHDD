@@ -2,7 +2,7 @@
 
 ## Obchazení digitálního podpisu ovladačů v operačním systému instalace MS Windows 10
 
-> Z důvodu musíme zakázat digitální podpis ovladačů kvůli virtualnímu ovladači *FiraDisk*, aby operační systém MS Windows 10 naběhl z virtualní mechaniky ve formátu *.iso.
+> Z důvodu musíme zakázat digitální podpis ovladačů kvůli virtualnímu ovladači *FiraDisk*, aby operační systém MS Windows 10 naběhl z virtualní mechaniky v obrazovém formátu *.iso.
 
 * Vyberte si v menu dle dané architektury a pak rovnou stiskni klávesou <kbd>F8</kbd> místo <kbd>Enter</kbd>.
 
